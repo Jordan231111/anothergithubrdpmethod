@@ -1,0 +1,13 @@
+name: Windows RDP (Windows Server 2019)
+
+on:
+  workflow_dispatch:
+jobs:
+  rdp:
+    runs-on: windows-2019
+    steps:
+       - name: Download repository files
+         uses: actions/checkout@v2
+
+       - name: Enable RDP with ngrok
+         run: powershell.exe -File enable-rdp.ps1

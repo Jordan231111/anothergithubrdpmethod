@@ -1,0 +1,13 @@
+name: Windows RDP
+
+on:
+  workflow_dispatch:
+jobs:
+  rdp:
+    runs-on: windows-latest
+    steps:
+       - name: Download repository files
+         uses: actions/checkout@v2
+
+       - name: Enable RDP with ngrok
+         run: powershell.exe -File enable-rdp.ps1
